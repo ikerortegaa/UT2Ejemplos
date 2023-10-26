@@ -20,8 +20,8 @@ public class ej4ResultSet {
             int id ; String descr;
             while(rs.next() )
             { 
-            	id = rs.getInt(1);	// leo la primera columna (1) de la fila actual, que es int (getInt)
-            	// id = rs.getInt("id");	, equivalente a la línea anterior
+            	//id = rs.getInt(1);	// leo la primera columna (1) de la fila actual, que es int (getInt)
+            	 id = rs.getInt("categoriaid");	//, equivalente a la línea anterior
             	//descr = rs.getString(2);
             	descr = rs.getString("nombrecat");	// equivalente a la líne anterior
             	System.out.println("Identificador: " + id + ", descripción: " + descr);
