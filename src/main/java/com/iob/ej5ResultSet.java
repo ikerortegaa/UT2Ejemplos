@@ -2,6 +2,7 @@ package com.iob;
 import org.apache.commons.dbutils.DbUtils;
 
 import java.sql.*;
+import java.util.Scanner;
 
 public class ej5ResultSet {
 
@@ -10,6 +11,7 @@ public class ej5ResultSet {
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
+        Scanner ent = new Scanner(System.in);
         
         try {
             //Registrando el Driver
@@ -23,7 +25,7 @@ public class ej5ResultSet {
             conn = DriverManager.getConnection(jdbcUrl,"root","root");
             System.out.println("Conexión establecida con la Base de datos...");
             
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
             
             //Ejecutamos la SELECT sobre la tabla articulos
             String sql = "select * from clientes";
@@ -39,6 +41,10 @@ public class ej5ResultSet {
                 //Obtenemos la información por el nombre de la columna
                 
                 id = rs.getInt("clienteid");
+                if(id==5)
+                {
+                    ent.nextLine();
+                }
                 cedula = rs.getString("cedula_ruc");
                 nomcia = rs.getString("nombrecia");
                 
