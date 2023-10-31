@@ -25,7 +25,7 @@ public class ej13Pool
 		String descripcionProducto = "alicates";
 		float preciounit = 1.8f;
 		int idProveedor=10, idCategoria = 100, existencias =10;
-		// El id del producto que vamos a registrar aún no se conoce
+		// El "id" del producto que vamos a registrar aún no se conoce
 		String sqlAltaProducto = "INSERT INTO productos (productoid,proveedorid,categoriaid,descripcion, preciounit,existencia) VALUES (?,?, ?,?, ?,?)";
 		String sqlAltaCategoria = "INSERT INTO categorias(categoriaid, nombrecat) " + "VALUES (?, ?)";
 		try {
